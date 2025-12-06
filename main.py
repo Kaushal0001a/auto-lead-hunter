@@ -1,9 +1,15 @@
 import requests
 import time
-import random
-from duckduckgo_search import DDGS
 
-KEYWORDS = ["luxury watch store", "custom jewelry", "electric bike shop"]
+# WE GIVE IT A MAP INSTEAD OF SEARCHING BLINDLY
+TARGETS = [
+    "https://www.gymshark.com",
+    "https://www.colourpop.com",
+    "https://www.fashionnova.com",
+    "https://www.allbirds.com",
+    "https://kyliecosmetics.com",
+    "https://www.mvmt.com"
+]
 OUTPUT_FILE = "leads.md"
 
 def audit_site(url):
@@ -14,42 +20,34 @@ def audit_site(url):
         duration = round(time.time() - start, 2)
         
         if response.status_code == 200:
-            # TEST MODE: We save EVERYTHING just to prove it works
-            return f"| {url} | {duration}s | Scanned (Test) |"
+            html = response.text.lower()
+            has_pixel = 'fbevents.js' in html
+            
+            # Label the result
+            status = "Good"
+            if duration > 2.0:
+                status = "SLOW (Potential Lead)"
+            
+            return f"| {url} | {duration}s | {status} |"
     except:
-        return None
+        return f"| {url} | Error | Failed |"
     return None
 
 def run_hunter():
-    print("--- 🤖 HUNTER BOT STARTED (TEST MODE) ---")
-    unique_domains = set()
+    print("--- 🤖 HUNTER BOT STARTED (DIRECT MODE) ---")
     
-    # 1. SEARCH
-    with DDGS() as ddgs:
-        for keyword in KEYWORDS:
-            print(f"Searching: {keyword}...")
-            # Search for Shopify stores
-            results = ddgs.text(f'site:myshopify.com "{keyword}"', max_results=5)
-            if results:
-                for r in results:
-                    unique_domains.add(r['href'])
-            time.sleep(1)
-
-    # 2. AUDIT
-    print(f"Auditing {len(unique_domains)} stores...")
     found_leads = []
     
-    for url in unique_domains:
+    for url in TARGETS:
+        print(f"Auditing: {url}...")
         result = audit_site(url)
         if result:
             found_leads.append(result)
-            print(f"Saved: {url}")
         time.sleep(1)
 
-    # 3. SAVE
-    # We force it to write the file no matter what
+    # WRITE TO FILE
     with open(OUTPUT_FILE, "a") as f:
-        f.write(f"\n\n### Test Scan: {time.strftime('%Y-%m-%d')}\n")
+        f.write(f"\n\n### Audit Report: {time.strftime('%Y-%m-%d %H:%M')}\n")
         f.write("| URL | Speed | Status |\n|---|---|---|\n")
         for lead in found_leads:
             f.write(lead + "\n")
