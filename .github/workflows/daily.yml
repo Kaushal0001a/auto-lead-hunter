@@ -1,0 +1,35 @@
+name: Daily Hunter
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # Runs at 6:00 AM UTC
+  workflow_dispatch:      # Allows us to press a button to run it now
+
+permissions:
+  contents: write         # CRITICAL: Allows the bot to save the list
+
+jobs:
+  hunt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          
+      - name: Install Tools
+        run: pip install -r requirements.txt
+        
+      - name: Run Robot
+        run: python main.py
+        
+      - name: Save Results
+        run: |
+          git config --global user.name "Bot"
+          git config --global user.email "bot@auto.com"
+          git add leads.md || true
+          git commit -m "New Leads Found" || true
+          git push
+          
