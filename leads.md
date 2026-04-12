@@ -1406,3 +1406,14 @@
 | https://www.allbirds.com | 0.26s | Good |
 | https://kyliecosmetics.com | 0.18s | Good |
 | https://www.mvmt.com | 0.62s | Good |
+
+
+### Audit Report: 2026-04-12 07:01
+| URL | Speed | Status |
+|---|---|---|
+| https://www.gymshark.com | 5.26s | SLOW (Potential Lead) |
+| https://www.colourpop.com | 0.46s | Good |
+| https://www.fashionnova.com | 0.46s | Good |
+| https://www.allbirds.com | 0.27s | Good |
+| https://kyliecosmetics.com | 0.17s | Good |
+| https://www.mvmt.com | 0.76s | Good |
