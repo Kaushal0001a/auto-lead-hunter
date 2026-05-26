@@ -1882,3 +1882,14 @@
 |---|---|---|
 | https://www.gymshark.com | 0.99s | Good |
 | https://www.mvmt.com | 0.72s | Good |
+
+
+### Audit Report: 2026-05-26 09:30
+| URL | Speed | Status |
+|---|---|---|
+| https://www.gymshark.com | 1.12s | Good |
+| https://www.colourpop.com | 0.48s | Good |
+| https://www.fashionnova.com | 0.32s | Good |
+| https://www.allbirds.com | 0.26s | Good |
+| https://kyliecosmetics.com | 0.29s | Good |
+| https://www.mvmt.com | 0.82s | Good |
