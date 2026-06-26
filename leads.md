@@ -2221,3 +2221,14 @@
 | https://www.allbirds.com | 0.17s | Good |
 | https://kyliecosmetics.com | 0.17s | Good |
 | https://www.mvmt.com | 0.66s | Good |
+
+
+### Audit Report: 2026-06-26 08:46
+| URL | Speed | Status |
+|---|---|---|
+| https://www.gymshark.com | 0.88s | Good |
+| https://www.colourpop.com | 1.09s | Good |
+| https://www.fashionnova.com | 0.64s | Good |
+| https://www.allbirds.com | 0.23s | Good |
+| https://kyliecosmetics.com | 0.19s | Good |
+| https://www.mvmt.com | 0.79s | Good |
