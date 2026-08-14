@@ -2735,3 +2735,14 @@
 | https://www.allbirds.com | 0.21s | Good |
 | https://kyliecosmetics.com | 0.19s | Good |
 | https://www.mvmt.com | 0.69s | Good |
+
+
+### Audit Report: 2026-08-14 07:03
+| URL | Speed | Status |
+|---|---|---|
+| https://www.gymshark.com | 1.21s | Good |
+| https://www.colourpop.com | 0.57s | Good |
+| https://www.fashionnova.com | 0.44s | Good |
+| https://www.allbirds.com | 0.35s | Good |
+| https://kyliecosmetics.com | 0.35s | Good |
+| https://www.mvmt.com | 0.76s | Good |
