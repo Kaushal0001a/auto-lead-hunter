@@ -3386,3 +3386,11 @@
 |---|---|---|
 | https://www.gymshark.com | 4.97s | SLOW (Potential Lead) |
 | https://www.fashionnova.com | 0.39s | Good |
+
+
+### Audit Report: 2026-10-14 10:44
+| URL | Speed | Status |
+|---|---|---|
+| https://www.gymshark.com | 1.01s | Good |
+| https://www.fashionnova.com | 0.7s | Good |
+| https://www.allbirds.com | 0.27s | Good |
